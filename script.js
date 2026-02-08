@@ -40,21 +40,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Copy to clipboard
-    copyBtn.addEventListener('click', function() {
+    copyBtn.addEventListener('click', async function() {
         if (!questionOutput.value) {
             alert('Nothing to copy! Please format a question first.');
             return;
         }
 
-        questionOutput.select();
-        document.execCommand('copy');
-        
-        // Visual feedback
-        const originalText = copyBtn.textContent;
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => {
-            copyBtn.textContent = originalText;
-        }, 2000);
+        try {
+            await navigator.clipboard.writeText(questionOutput.value);
+            
+            // Visual feedback
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 2000);
+        } catch (err) {
+            alert('Failed to copy text. Please try again.');
+            console.error('Failed to copy:', err);
+        }
     });
 
     // Clear both textareas
