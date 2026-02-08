@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Question Formatter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>E-Learning Question Formatter</h1>
+            <p>Format your questions for e-learning platforms</p>
+        </header>
+        
+        <main>
+            <div class="formatter-section">
+                <h2>Question Input</h2>
+                <textarea id="questionInput" placeholder="Enter your question here..."></textarea>
+                
+                <h2>Formatted Output</h2>
+                <textarea id="questionOutput" readonly placeholder="Formatted question will appear here..."></textarea>
+                
+                <div class="button-group">
+                    <button id="formatBtn" class="btn btn-primary">Format Question</button>
+                    <button id="copyBtn" class="btn btn-secondary">Copy to Clipboard</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 E-Learning Question Formatter</p>
+            <a href="https://github.com/ismail-k/E-Learning-Question-Formatter-app/issues/new/choose" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="report-issue-link">
+                Report Issue
+            </a>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
